@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Slicing Challenge</title>
+	</head>
+	<body>
+		<h1>List Result Slicing Challenge</h1>
+		<ul id="file-list"></ul>
+
+		<script>
+			const files = ["nextcent/index.html"];
+
+			const listContainer = document.getElementById("file-list");
+			files.forEach((file) => {
+				const listItem = document.createElement("li");
+				const link = document.createElement("a");
+				link.href = file;
+
+				// Ambil nama folder tanpa "index.html"
+				const folderName = file.replace("/index.html", "");
+				link.textContent = folderName;
+
+				listItem.appendChild(link);
+				listContainer.appendChild(listItem);
+			});
+		</script>
+	</body>
+</html>
